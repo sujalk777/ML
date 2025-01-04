@@ -19,3 +19,9 @@ b = np.copy(arr)
 b[0]=34
 arr
 b
+list(i*i for i in range(5))
+np.fromstring('23 45 56',sep=' ')
+np.fromstring('23,45,56',sep=',')
+arr1
+arr1.size
+arr1.shape
