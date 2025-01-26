@@ -55,4 +55,4 @@ df[(df['Sex'] == 'female')& (df['Fare']>32)]
 df[df['Fare']==max(df['Fare'])]['Name']
 len(df)
 df[0:100:3]
-df.iloc[0:5,[0,1,2,3]] //integer location
+df.iloc[0:5,[0,1,2,3]] #integer location
