@@ -85,3 +85,11 @@ ridgecv.fit(xtrain_scaled,ytrain)
 ypred=ridgecv.predict(xtest_scaled)
 print("mean_absolute_error ",mean_absolute_eror(ytest,ypred))
 print("R2 score:"r2_score(ytest,ypred))
+
+from sklearn.linear_model import ElasticNet
+elastic=ElasticNet()
+elastic.fit(xtrain_scaled,ytrain)
+ypred=elastic.predict(xtest_scaled)
+print("mean absolute error :",mean_absolute_error(ytest,ypred))
+print("R2 score: ",r2_score(ytest,ypred))
+
