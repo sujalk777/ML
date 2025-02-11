@@ -26,3 +26,29 @@ k1.elbow
 
 from sklearn.metrics import silhoutte_score
 silhoutte_score=[]
+for k in range(2,11):
+  kMeans=Kmeans(n_clusters=k,init='k-means++')
+  kMeans.fit(x.train)
+  score=silhoutte_score(xtrain,kMeans.lebels_)
+  silhoutte_score.append(score)
+silhoutte_score
+plt.plot(range(2,11),silhoutte__score)
+plt.xticks(range(2,11))
+plt.xlabel("No of Cluster")
+plt.ylabel("score")
+plt.show()
+
+
+# HIERARICHAL CLUSTERING
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import sklearn import datasets
+#import iris dataset 
+iris=datasets.load_iris()
+iris_data=pd.DataFrame(iris.data)
+iris_data.columns=iris.features_name
+
+
+
+
