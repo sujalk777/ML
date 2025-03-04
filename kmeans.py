@@ -48,6 +48,27 @@ import sklearn import datasets
 iris=datasets.load_iris()
 iris_data=pd.DataFrame(iris.data)
 iris_data.columns=iris.features_name
+iris_data
+#standardization
+from sklearn.preprocessign import StandardScaler
+scaler=StandardScaler()
+x_sclaed=scaler.fit_transform(iris_data)
+# Apply PCA
+from sklearn.decomposition import PCA
+pca_scaled=pca.fit_transform
+plt.scatter(pca_scaled[:,0])
+# agglomerative clustering
+
+
+
+
+
+
+
+
+
+
+
 
 
 
