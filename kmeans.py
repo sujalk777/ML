@@ -58,8 +58,38 @@ from sklearn.decomposition import PCA
 pca_scaled=pca.fit_transform
 plt.scatter(pca_scaled[:,0])
 # agglomerative clustering
+# to construct a dendogram
+import scipy.cluster.hierarchy as sc 
+# plot diagram
+plt.figure(figsize=(20,7))
+plt.title("Dendogram")
 
+# create dendogram
+sc.dendogram(sc.linkage(pca_scaled,method='ward'))
+plt.title("Dendogram")
+plt.xlabel("sample Index")
+plt.ylabel("Euclidean Distance")
 
+from sklearn.cluster import Agglomerativeclustering
+cluster=AgglomerativeClustering(n_clusters=2,affinity='euclidean',linkage='ward')
+cluter.fit(pca_scaled)
+cluster.labels_
+plt.scatter(pca_scaled[:0],pca_scaled[:,1])
+
+# silhoutte score
+from sklearn.metrics import silhoutte_score
+silhoutte_coff=[]
+for k in range(2,11):
+  agglo=AgglomerativeClustering(n_cluster=2,affinity='euclidean',linkage='ward')
+  agglo.fit(x_scaled)
+  score=silhoutte_score(x_scaled,agglo.labels_)
+  silhoutte_coff.append()
+
+plt.plot(range(2,11),silhoutte_coff)
+plt.xticks(range(2,11))
+plt.xlabel("No of cluster")
+plt.ylabel("Silhoutte_coff")
+plt.show()
 
 
 
