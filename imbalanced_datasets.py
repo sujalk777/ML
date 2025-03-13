@@ -33,3 +33,18 @@ df_minority = df[df['Target']==1]
 df_majority = df[df['Target']==0]
 df_minority
 from sklearn.utils import resample
+df_minority_upsampled = resample(df_minority,replace=True,#sample with replacment
+                                 n_samples=len(df_majority),
+                                 random_state=42)
+df_minority.shape
+df_minority_upsampled.shape
+df_minority_upsampled
+df_upsampled = pd.concat([df_majority,df_minority_upsampled])
+df_upsampled
+df_upsampled['Target'].value_counts()
+df_majority_downsampled = resample(df_majority,replace=False,
+                                   n_samples= len(df_minority),
+                                   random_state=42)
+df_majority_downsampled.shape
+df_downsampled = pd.concat([df_minority,df_majority_downsampled])
+df_downsampled['Target'].value_counts()
