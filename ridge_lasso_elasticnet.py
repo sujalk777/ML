@@ -81,3 +81,27 @@ sns.countplot(x='month',hue='Classes',data=df)
 plt.ylabel('Number of Fires',weight='bold')
 plt.xlabel('Months',weight='bold')
 plt.title("Fire Analysis of Brjaia Regions",weight='bold')
+
+# Elstic net regression
+from sklearn.linear_model import ElasticNet
+from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import r2_score
+elastic=ElasticNet()
+elastic.fit(X_train_scaled,y_train)
+y_pred=elastic.predict(X_test_scaled)
+mae=mean_absolute_error(y_test,y_pred)
+score=r2_score(y_test,y_pred)
+print("Mean absolute error", mae)
+print("R2 Score", score)
+plt.scatter(y_test,y_pred)
+from sklearn.linear_model import ElasticNetCV
+elasticcv=ElasticNetCV(cv=5)
+elasticcv.fit(X_train_scaled,y_train)
+y_pred=elasticcv.predict(X_test_scaled)
+plt.scatter(y_test,y_pred)
+mae=mean_absolute_error(y_test,y_pred)
+score=r2_score(y_test,y_pred)
+print("Mean absolute error", mae)
+print("R2 Score", score)
+elasticcv.alphas_
+
