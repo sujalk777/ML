@@ -1,3 +1,4 @@
+# wine dataset
 import pandas as pd
 df = pd.read_csv('winequality-red (1).csv')
 df.head()
@@ -27,3 +28,4 @@ for colum in df.columns:
 sns.histplot(df['alcohol'])
 sns.catplot(x='quality',y='alcohol',data=df,kind='box')
 sns.scatterplot(x='alcohol',y='pH',hue='quality',data=df)
+
